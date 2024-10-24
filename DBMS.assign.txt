@@ -1,0 +1,193 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1037
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE RUHANDE1;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> USE RUHANDE1;
+Database changed
+mysql> CREATE TABLE NGOMA1;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> CREATE TABLE NGOMA1(ID INT(2),F_NAME CHAR(12),L_NAME CHAR(10),GENDER CHAR(11),PROVINCE CHAR(10),DISTRICT CHAR(9),SECTOR CHAR(8),CELL CHAR(5),EMAIL VARCHAR(40),TELEPHON INT(10));
+Query OK, 0 rows affected, 2 warnings (0.03 sec)
+
+mysql> INSERT INTO NGOMA1 VALUES('110','KAMATARI','ERIC','MALE','NORTHERN','GICUMBI','RWAMIKO','KIGABIRO','kamatari@gmail.com','0791608240');
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+mysql> INSERT INTO NGOMA1 VALUES('210','KARORI','EMME','MALE','NORTHERN','MUSANZE','KIMONYI','MUHOZA','karori@gmail.com','0791608240');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA1 VALUES('200','KANYANA','RUTH','FEMALE','EAST','MWURIRE','BWANA','RUTEMBA','kanyana@gmail.com','0791608240');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA1 VALUES('220','MUTESI','SOLANGE','FEMALE','SOUTH','RUHANGO','BUYOGA','RUTOVU','mutesi@gmail.com','0791608240');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA1 VALUES('120','KARISA','DANI','MALE','WEST','GATSIBO','BIHOGO','RUTOVU','karisa@gmail.com','0796700620');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA1 VALUES('130','RUDOVIKO','EMME','MALE','NORTHERN','KIGALI','KAGOGO','KANYARU','rudoviko@gmail.com','0786706540');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA1 VALUES('140','KAMALI','ROGER','MALE','NORTHERN','KIGALI','KALISIMBI','KANYOGOTE','kamali@gmail.com','0784406540');
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> INSERT INTO NGOMA1 VALUES('150','UMWARI','GRACE','FEMALE','WEST','TONGO','CYIRI','MAWUWA','umwali@gmail.com','0784332111');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> INSERT INTO NGOMA1 VALUES('250','IRADUKUNDA','MODESTA','FEMALE','WEST','NYAMABUYE','MUDUHA','KANYARIRA','iradukunda@gmail.com','0784332111');
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+mysql> INSERT INTO NGOMA1 VALUES('240','ISHIMWE','BELSE','FEMALE','EAST','KAYONZA','MUMARU','KANYARU','ishimwe@gmail.com','0798432221');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> SELECT*FROM NGOMA1;
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+-----------+
+| ID   | F_NAME     | L_NAME  | GENDER | PROVINCE | DISTRICT  | SECTOR   | CELL  | EMAIL                | TELEPHON  |
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+-----------+
+|  110 | KAMATARI   | ERIC    | MALE   | NORTHERN | GICUMBI   | RWAMIKO  | KIGAB | kamatari@gmail.com   | 791608240 |
+|  210 | KARORI     | EMME    | MALE   | NORTHERN | MUSANZE   | KIMONYI  | MUHOZ | karori@gmail.com     | 791608240 |
+|  200 | KANYANA    | RUTH    | FEMALE | EAST     | MWURIRE   | BWANA    | RUTEM | kanyana@gmail.com    | 791608240 |
+|  220 | MUTESI     | SOLANGE | FEMALE | SOUTH    | RUHANGO   | BUYOGA   | RUTOV | mutesi@gmail.com     | 791608240 |
+|  120 | KARISA     | DANI    | MALE   | WEST     | GATSIBO   | BIHOGO   | RUTOV | karisa@gmail.com     | 796700620 |
+|  130 | RUDOVIKO   | EMME    | MALE   | NORTHERN | KIGALI    | KAGOGO   | KANYA | rudoviko@gmail.com   | 786706540 |
+|  140 | KAMALI     | ROGER   | MALE   | NORTHERN | KIGALI    | KALISIMB | KANYO | kamali@gmail.com     | 784406540 |
+|  150 | UMWARI     | GRACE   | FEMALE | WEST     | TONGO     | CYIRI    | MAWUW | umwali@gmail.com     | 784332111 |
+|  250 | IRADUKUNDA | MODESTA | FEMALE | WEST     | NYAMABUYE | MUDUHA   | KANYA | iradukunda@gmail.com | 784332111 |
+|  240 | ISHIMWE    | BELSE   | FEMALE | EAST     | KAYONZA   | MUMARU   | KANYA | ishimwe@gmail.com    | 798432221 |
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA1 ADD LOCATION CHAR(4);
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM NGOMA1;
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+-----------+----------+
+| ID   | F_NAME     | L_NAME  | GENDER | PROVINCE | DISTRICT  | SECTOR   | CELL  | EMAIL                | TELEPHON  | LOCATION |
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+-----------+----------+
+|  110 | KAMATARI   | ERIC    | MALE   | NORTHERN | GICUMBI   | RWAMIKO  | KIGAB | kamatari@gmail.com   | 791608240 | NULL     |
+|  210 | KARORI     | EMME    | MALE   | NORTHERN | MUSANZE   | KIMONYI  | MUHOZ | karori@gmail.com     | 791608240 | NULL     |
+|  200 | KANYANA    | RUTH    | FEMALE | EAST     | MWURIRE   | BWANA    | RUTEM | kanyana@gmail.com    | 791608240 | NULL     |
+|  220 | MUTESI     | SOLANGE | FEMALE | SOUTH    | RUHANGO   | BUYOGA   | RUTOV | mutesi@gmail.com     | 791608240 | NULL     |
+|  120 | KARISA     | DANI    | MALE   | WEST     | GATSIBO   | BIHOGO   | RUTOV | karisa@gmail.com     | 796700620 | NULL     |
+|  130 | RUDOVIKO   | EMME    | MALE   | NORTHERN | KIGALI    | KAGOGO   | KANYA | rudoviko@gmail.com   | 786706540 | NULL     |
+|  140 | KAMALI     | ROGER   | MALE   | NORTHERN | KIGALI    | KALISIMB | KANYO | kamali@gmail.com     | 784406540 | NULL     |
+|  150 | UMWARI     | GRACE   | FEMALE | WEST     | TONGO     | CYIRI    | MAWUW | umwali@gmail.com     | 784332111 | NULL     |
+|  250 | IRADUKUNDA | MODESTA | FEMALE | WEST     | NYAMABUYE | MUDUHA   | KANYA | iradukunda@gmail.com | 784332111 | NULL     |
+|  240 | ISHIMWE    | BELSE   | FEMALE | EAST     | KAYONZA   | MUMARU   | KANYA | ishimwe@gmail.com    | 798432221 | NULL     |
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+-----------+----------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA1 SET LOCATION='HUYE' WHERE GENDER='FEMALE';
+Query OK, 5 rows affected (0.00 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
+mysql> SELECT*FROM NGOMA1;
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+-----------+----------+
+| ID   | F_NAME     | L_NAME  | GENDER | PROVINCE | DISTRICT  | SECTOR   | CELL  | EMAIL                | TELEPHON  | LOCATION |
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+-----------+----------+
+|  110 | KAMATARI   | ERIC    | MALE   | NORTHERN | GICUMBI   | RWAMIKO  | KIGAB | kamatari@gmail.com   | 791608240 | NULL     |
+|  210 | KARORI     | EMME    | MALE   | NORTHERN | MUSANZE   | KIMONYI  | MUHOZ | karori@gmail.com     | 791608240 | NULL     |
+|  200 | KANYANA    | RUTH    | FEMALE | EAST     | MWURIRE   | BWANA    | RUTEM | kanyana@gmail.com    | 791608240 | HUYE     |
+|  220 | MUTESI     | SOLANGE | FEMALE | SOUTH    | RUHANGO   | BUYOGA   | RUTOV | mutesi@gmail.com     | 791608240 | HUYE     |
+|  120 | KARISA     | DANI    | MALE   | WEST     | GATSIBO   | BIHOGO   | RUTOV | karisa@gmail.com     | 796700620 | NULL     |
+|  130 | RUDOVIKO   | EMME    | MALE   | NORTHERN | KIGALI    | KAGOGO   | KANYA | rudoviko@gmail.com   | 786706540 | NULL     |
+|  140 | KAMALI     | ROGER   | MALE   | NORTHERN | KIGALI    | KALISIMB | KANYO | kamali@gmail.com     | 784406540 | NULL     |
+|  150 | UMWARI     | GRACE   | FEMALE | WEST     | TONGO     | CYIRI    | MAWUW | umwali@gmail.com     | 784332111 | HUYE     |
+|  250 | IRADUKUNDA | MODESTA | FEMALE | WEST     | NYAMABUYE | MUDUHA   | KANYA | iradukunda@gmail.com | 784332111 | HUYE     |
+|  240 | ISHIMWE    | BELSE   | FEMALE | EAST     | KAYONZA   | MUMARU   | KANYA | ishimwe@gmail.com    | 798432221 | HUYE     |
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+-----------+----------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA1 SET LOCATION='MUSANZE';
+Query OK, 10 rows affected, 10 warnings (0.00 sec)
+Rows matched: 10  Changed: 10  Warnings: 10
+
+mysql> SELECT*FROM NGOMA1;
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+-----------+----------+
+| ID   | F_NAME     | L_NAME  | GENDER | PROVINCE | DISTRICT  | SECTOR   | CELL  | EMAIL                | TELEPHON  | LOCATION |
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+-----------+----------+
+|  110 | KAMATARI   | ERIC    | MALE   | NORTHERN | GICUMBI   | RWAMIKO  | KIGAB | kamatari@gmail.com   | 791608240 | MUSA     |
+|  210 | KARORI     | EMME    | MALE   | NORTHERN | MUSANZE   | KIMONYI  | MUHOZ | karori@gmail.com     | 791608240 | MUSA     |
+|  200 | KANYANA    | RUTH    | FEMALE | EAST     | MWURIRE   | BWANA    | RUTEM | kanyana@gmail.com    | 791608240 | MUSA     |
+|  220 | MUTESI     | SOLANGE | FEMALE | SOUTH    | RUHANGO   | BUYOGA   | RUTOV | mutesi@gmail.com     | 791608240 | MUSA     |
+|  120 | KARISA     | DANI    | MALE   | WEST     | GATSIBO   | BIHOGO   | RUTOV | karisa@gmail.com     | 796700620 | MUSA     |
+|  130 | RUDOVIKO   | EMME    | MALE   | NORTHERN | KIGALI    | KAGOGO   | KANYA | rudoviko@gmail.com   | 786706540 | MUSA     |
+|  140 | KAMALI     | ROGER   | MALE   | NORTHERN | KIGALI    | KALISIMB | KANYO | kamali@gmail.com     | 784406540 | MUSA     |
+|  150 | UMWARI     | GRACE   | FEMALE | WEST     | TONGO     | CYIRI    | MAWUW | umwali@gmail.com     | 784332111 | MUSA     |
+|  250 | IRADUKUNDA | MODESTA | FEMALE | WEST     | NYAMABUYE | MUDUHA   | KANYA | iradukunda@gmail.com | 784332111 | MUSA     |
+|  240 | ISHIMWE    | BELSE   | FEMALE | EAST     | KAYONZA   | MUMARU   | KANYA | ishimwe@gmail.com    | 798432221 | MUSA     |
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+-----------+----------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA1 DROP TELEPHON;
+Query OK, 10 rows affected (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT*FROM NGOMA1;
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+----------+
+| ID   | F_NAME     | L_NAME  | GENDER | PROVINCE | DISTRICT  | SECTOR   | CELL  | EMAIL                | LOCATION |
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+----------+
+|  110 | KAMATARI   | ERIC    | MALE   | NORTHERN | GICUMBI   | RWAMIKO  | KIGAB | kamatari@gmail.com   | MUSA     |
+|  210 | KARORI     | EMME    | MALE   | NORTHERN | MUSANZE   | KIMONYI  | MUHOZ | karori@gmail.com     | MUSA     |
+|  200 | KANYANA    | RUTH    | FEMALE | EAST     | MWURIRE   | BWANA    | RUTEM | kanyana@gmail.com    | MUSA     |
+|  220 | MUTESI     | SOLANGE | FEMALE | SOUTH    | RUHANGO   | BUYOGA   | RUTOV | mutesi@gmail.com     | MUSA     |
+|  120 | KARISA     | DANI    | MALE   | WEST     | GATSIBO   | BIHOGO   | RUTOV | karisa@gmail.com     | MUSA     |
+|  130 | RUDOVIKO   | EMME    | MALE   | NORTHERN | KIGALI    | KAGOGO   | KANYA | rudoviko@gmail.com   | MUSA     |
+|  140 | KAMALI     | ROGER   | MALE   | NORTHERN | KIGALI    | KALISIMB | KANYO | kamali@gmail.com     | MUSA     |
+|  150 | UMWARI     | GRACE   | FEMALE | WEST     | TONGO     | CYIRI    | MAWUW | umwali@gmail.com     | MUSA     |
+|  250 | IRADUKUNDA | MODESTA | FEMALE | WEST     | NYAMABUYE | MUDUHA   | KANYA | iradukunda@gmail.com | MUSA     |
+|  240 | ISHIMWE    | BELSE   | FEMALE | EAST     | KAYONZA   | MUMARU   | KANYA | ishimwe@gmail.com    | MUSA     |
++------+------------+---------+--------+----------+-----------+----------+-------+----------------------+----------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT ID,F_NAME,PROVINCE,EMAIL FROM NGOMA1;
++------+------------+----------+----------------------+
+| ID   | F_NAME     | PROVINCE | EMAIL                |
++------+------------+----------+----------------------+
+|  110 | KAMATARI   | NORTHERN | kamatari@gmail.com   |
+|  210 | KARORI     | NORTHERN | karori@gmail.com     |
+|  200 | KANYANA    | EAST     | kanyana@gmail.com    |
+|  220 | MUTESI     | SOUTH    | mutesi@gmail.com     |
+|  120 | KARISA     | WEST     | karisa@gmail.com     |
+|  130 | RUDOVIKO   | NORTHERN | rudoviko@gmail.com   |
+|  140 | KAMALI     | NORTHERN | kamali@gmail.com     |
+|  150 | UMWARI     | WEST     | umwali@gmail.com     |
+|  250 | IRADUKUNDA | WEST     | iradukunda@gmail.com |
+|  240 | ISHIMWE    | EAST     | ishimwe@gmail.com    |
++------+------------+----------+----------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT*FROM NGOMA1 WHERE GENDER='MALE' AND DISTRICT='KIGALI';
++------+----------+--------+--------+----------+----------+----------+-------+--------------------+----------+
+| ID   | F_NAME   | L_NAME | GENDER | PROVINCE | DISTRICT | SECTOR   | CELL  | EMAIL              | LOCATION |
++------+----------+--------+--------+----------+----------+----------+-------+--------------------+----------+
+|  130 | RUDOVIKO | EMME   | MALE   | NORTHERN | KIGALI   | KAGOGO   | KANYA | rudoviko@gmail.com | MUSA     |
+|  140 | KAMALI   | ROGER  | MALE   | NORTHERN | KIGALI   | KALISIMB | KANYO | kamali@gmail.com   | MUSA     |
++------+----------+--------+--------+----------+----------+----------+-------+--------------------+----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT*FROM NGOMA1 WHERE GENDER='MALE'OR DISTRICT='KIGALI';
++------+----------+--------+--------+----------+----------+----------+-------+--------------------+----------+
+| ID   | F_NAME   | L_NAME | GENDER | PROVINCE | DISTRICT | SECTOR   | CELL  | EMAIL              | LOCATION |
++------+----------+--------+--------+----------+----------+----------+-------+--------------------+----------+
+|  110 | KAMATARI | ERIC   | MALE   | NORTHERN | GICUMBI  | RWAMIKO  | KIGAB | kamatari@gmail.com | MUSA     |
+|  210 | KARORI   | EMME   | MALE   | NORTHERN | MUSANZE  | KIMONYI  | MUHOZ | karori@gmail.com   | MUSA     |
+|  120 | KARISA   | DANI   | MALE   | WEST     | GATSIBO  | BIHOGO   | RUTOV | karisa@gmail.com   | MUSA     |
+|  130 | RUDOVIKO | EMME   | MALE   | NORTHERN | KIGALI   | KAGOGO   | KANYA | rudoviko@gmail.com | MUSA     |
+|  140 | KAMALI   | ROGER  | MALE   | NORTHERN | KIGALI   | KALISIMB | KANYO | kamali@gmail.com   | MUSA     |
++------+----------+--------+--------+----------+----------+----------+-------+--------------------+----------+
+5 rows in set (0.00 sec)
+
+mysql>
